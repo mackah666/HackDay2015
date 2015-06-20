@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/mackah666/HackDay2015",
   "dependencies": {
+    "body-parser": "^1.13.1",
     "express": "^4.12.4",
     "mongoose": "^4.0.5"
   }
