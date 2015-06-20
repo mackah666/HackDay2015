@@ -21,6 +21,8 @@
     "body-parser": "^1.13.1",
     "express": "^4.12.4",
     "mongodb-uri": "^0.9.7",
-    "mongoose": "^4.0.5"
+    "mongoose": "^4.0.5",
+    "passport": "^0.2.2",
+    "passport-http": "^0.2.2"
   }
 }
