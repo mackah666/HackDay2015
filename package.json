@@ -1,0 +1,23 @@
+{
+  "name": "HackDay2015",
+  "version": "0.0.0",
+  "description": "hack day code base",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mackah666/HackDay2015.git"
+  },
+  "author": "mackah666",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mackah666/HackDay2015/issues"
+  },
+  "homepage": "https://github.com/mackah666/HackDay2015",
+  "dependencies": {
+    "express": "^4.12.4",
+    "mongoose": "^4.0.5"
+  }
+}
