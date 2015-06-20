@@ -18,9 +18,18 @@ router.get('/', function(req, res, next) {
 
 /* GET /beers/id */
 router.get('/:id', function(req, res, next) {
-  Beer.findById(req.params.id, function (err, beer) {
+  Beer.findByIdAndRemove(req.params.id, function (err, beer) {
     if (err) return next(err);
     res.json(beer);
+  });
+});
+
+
+/* DELETE /beers/id */
+router.delete('/:id', function(req, res, next) {
+  Beer.findById(req.params.id, function (err, beer) {
+    if (err) return next(err);
+    res.json({ message: 'Beer removed from the locker!' });
   });
 });
 
