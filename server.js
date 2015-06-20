@@ -1,6 +1,6 @@
 // Get the packages we need
 var express = require('express');
-var express = require('mongoose');
+var mongoose = require('mongoose');
 
 // Create our Express application
 var app = express();
