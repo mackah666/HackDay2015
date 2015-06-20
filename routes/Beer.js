@@ -2,30 +2,51 @@ var express = require('express');
 var router = express.Router();
 
 var mongoose = require('mongoose');
-var Todo = require('../models/beer.js');
+var Beer = require('../models/beer.js');
 
-/* GET /todos listing. */
+
+
+
+
+/* GET /beers listing. */
 router.get('/', function(req, res, next) {
-  Todo.find(function (err, todos) {
+  Beer.find(function (err, beers) {
     if (err) return next(err);
-    res.json(todos);
+    res.json(beers);
   });
 });
 
-/* GET /todos/id */
+/* GET /beers/id */
 router.get('/:id', function(req, res, next) {
-  Todo.findById(req.params.id, function (err, post) {
+  Beer.findById(req.params.id, function (err, beer) {
     if (err) return next(err);
-    res.json(post);
+    res.json(beer);
   });
 });
 
 
-/* POST /todos */
-router.post('/', function(req, res, next) {
-  Todo.create(req.body, function (err, post) {
+/* PUT /beers/id */
+router.put('/:id', function(req, res, next) {
+  Beer.findById(req.params.id, function (err, beer) {
     if (err) return next(err);
-    res.json(post);
+    // Update the existing beer quantity
+    beer.quantity = req.body.quantity;
+
+    // Save the beer and check for errors
+    beer.save(function(err) {
+      if (err)
+        res.send(err);
+    });
+    res.json(beer);
+  });
+});
+
+
+/* POST /beers */
+router.post('/', function(req, res, next) {
+  Beer.create(req.body, function (err, beer) {
+    if (err) return next(err);
+    res.json(beer);
   });
 });
 
