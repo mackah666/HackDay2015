@@ -65,7 +65,8 @@ router.get('/', function(req, res) {
 // -- New Code Below Here -- //
 
 
-
+var users = require('./routes/User');
+app.use('/api/users', users);
 
 
 var beers = require('./routes/Beer');
