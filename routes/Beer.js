@@ -20,6 +20,7 @@ router.get('/', function(req, res, next) {
 router.get('/:id', function(req, res, next) {
   Beer.findById(req.params.id, function (err, beer) {
     if (err) return next(err);
+    res.contentType('application/json');
     res.json(beer);
   });
 });
@@ -29,6 +30,7 @@ router.get('/:id', function(req, res, next) {
 router.delete('/:id', function(req, res, next) {
   Beer.findById(req.params.id, function (err, beer) {
     if (err) return next(err);
+    res.contentType('application/json');
     res.json({ message: 'Beer removed from the locker!' });
   });
 });
@@ -41,11 +43,13 @@ router.put('/:id', function(req, res, next) {
     // Update the existing beer quantity
     beer.quantity = req.body.quantity;
 
+    res.contentType('application/json');
     // Save the beer and check for errors
     beer.save(function(err) {
       if (err)
         res.send(err);
     });
+
     res.json(beer);
   });
 });
@@ -55,6 +59,7 @@ router.put('/:id', function(req, res, next) {
 router.post('/', function(req, res, next) {
   Beer.create(req.body, function (err, beer) {
     if (err) return next(err);
+    res.contentType('application/json');
     res.json(beer);
   });
 });
