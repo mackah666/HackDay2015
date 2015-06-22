@@ -57,7 +57,7 @@ var router = express.Router();
 // Initial dummy route for testing
 // http://localhost:3000/api
 router.get('/', function(req, res) {
-  res.setHeader('Content-Type', 'application/json');
+  res.contentType('application/json');
   res.json({ message: 'You are running dangerously low on beer, really!' });
 });
 
